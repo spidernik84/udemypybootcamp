@@ -18,31 +18,18 @@ def print_board():
 def checkmatch():
     global winner 
     if tabledict['1'] == tabledict['2'] == tabledict['3']:
-        # print('you win!')
         winner = True
-    elif tabledict['1'] == tabledict['5'] == tabledict['9']:
-        # global winner 
-        # print('you win!')
+    elif tabledict['1'] == tabledict['5'] == tabledict['9']: 
         winner = True
-    elif tabledict['1'] == tabledict['4'] == tabledict['7']:
-        # global winner 
-        # print('you win!')
+    elif tabledict['1'] == tabledict['4'] == tabledict['7']: 
         winner = True
-    elif tabledict['3'] == tabledict['5'] == tabledict['7']:
-        # global winner 
-        # print('you win!')
+    elif tabledict['3'] == tabledict['5'] == tabledict['7']: 
         winner = True
-    elif tabledict['2'] == tabledict['5'] == tabledict['8']:
-        # global winner 
-        # print('you win!')
+    elif tabledict['2'] == tabledict['5'] == tabledict['8']: 
         winner = True
-    elif tabledict['4'] == tabledict['5'] == tabledict['6']:
-        # global winner 
-        # print('you win!')
+    elif tabledict['4'] == tabledict['5'] == tabledict['6']: 
         winner = True
-    elif tabledict['7'] == tabledict['8'] == tabledict['9']:
-        # global winner 
-        # print('you win!')
+    elif tabledict['7'] == tabledict['8'] == tabledict['9']: 
         winner = True
 
 
@@ -55,8 +42,10 @@ while True:
         player_mark = 'x'
     else:
         player_mark = 'o'
-
-    tabledict[input_numb] = player_mark
+    if tabledict[input_numb] != ('x' or 'o'):
+        tabledict[input_numb] = player_mark
+    else:
+        print('That spot is taken!')
 
     checkmatch()
     if winner:
@@ -70,15 +59,4 @@ if turn == 9:
     print('Draw...')
 else:
     print('Congratulations Player {}, you won!'.format(current_player))
-
-
-# def print_board(cella1):
-#     line = '{} | {} | {}'
-#     divider = '----------'
-#     print(cella1)
-    # print(line.format(cella1, cella2, cella3))
-    # print(divider)
-    # print(line.format(b1,b2,b3))
-    # print(divider)
-    # print(line.format(c1,c2,c3))
 
