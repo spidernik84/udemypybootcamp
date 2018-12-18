@@ -64,7 +64,7 @@ def check_available(board,position):
 
 
 def check_board_full(board):
-    for cell in len(board):
+    for cell in range(0,len(board)):
         if check_available(board,cell):
             return False
         else:
